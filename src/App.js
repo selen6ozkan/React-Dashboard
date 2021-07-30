@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Sidebar from "./components.js/Sidebar";
+import Navbar from "./components.js/Navbar";
+import Main from "./components.js/Main";
+import { Container, Row, Col } from "reactstrap";
+import {useState} from 'react';
 
 function App() {
+
+  let [showSidebar, setShowSidebar] = useState(false)
+
+
+
+  const cardStyle = {
+    color: "white",
+    backgroundColor: "#DD2F6E",
+  };
+  const imgStyle = {};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   
+            <Sidebar
+              setShowSidebar={setShowSidebar} 
+              showSidebar={showSidebar} 
+            />
+
+            
+            <div className="rightbar">
+
+
+              <Navbar 
+              setShowSidebar={setShowSidebar} 
+              showSidebar={showSidebar} 
+              />
+
+
+              <Main />
+            </div>
+      
+     
+   
     </div>
   );
 }
