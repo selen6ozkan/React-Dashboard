@@ -165,10 +165,10 @@ const Main = (props) => {
                             </p>
                           </div>
 
-                          <div className="icon" title={e.phone}>
+                          <div className="icon"  >
                             <i className="lar la-circle"></i>
-                            <i className="lar la-comment"></i>
-                           <a href="tel:{e.phone}"> <i className="las la-phone button" onClick={toggle}
+                            <a href="mailto:{e.email}"><i className="lar la-comment" title={e.email}></i></a>
+                           <a href="tel:{e.phone}"> <i className="las la-phone button"  title={e.phone}onClick={toggle}
                             ></i></a>
                           </div>
                         </div>
