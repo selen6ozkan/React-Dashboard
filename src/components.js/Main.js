@@ -1,7 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
+import { useState } from "react";
+import customer from "../customer.json";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+const Main = (props) => {
+  const { className } = props;
+  const [modal, setModal] = useState(false);
 
-const Main = () => {
+  const toggle = () => setModal(!modal);
+
   return (
     <main>
       <Container>
@@ -84,7 +91,7 @@ const Main = () => {
                         </tr>
                       </thead>
                       <tbody>
-                      <tr>
+                        <tr>
                           <td>Web development</td>
                           <td>Frontend</td>
                           <td>
@@ -110,7 +117,6 @@ const Main = () => {
                           <td>Ushop app</td>
                           <td>Mobile Team</td>
                           <td>
-                          
                             <span className="status"></span>pending
                           </td>
                         </tr>
@@ -123,16 +129,19 @@ const Main = () => {
                         </tr>
 
                         <tr>
-                          <td></td>
+                          <td>UI/UX Design</td>
+                          <td>UI Team</td>
+                          <td>
+                            <span className="status"></span>review
+                          </td>
                         </tr>
-                        
                       </tbody>
                     </table>
                   </div>
                 </div>
               </div>
             </Col>
-           
+
             <Col lg="4" md="12" sm="12">
               <div className="carddd">
                 <div className="card-top">
@@ -143,112 +152,32 @@ const Main = () => {
                 </div>
 
                 <div className="card-body">
-                  <div className="customer">
-                    <div className="user">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        width="60px"
-                        height="60px"
-                        alt=""
-                      />
-                      <div>
-                        <h5>Lewis Cunningham</h5>
+                  {customer &&
+                    customer.result.length > 0 &&
+                    customer.result.map((e) => (
+                      <div className="customer">
+                        <div className="user">
+                          <div className="name">
+                            <img src={e.avatar.url} alt="" />
+                            <p className="text" style={{ fontSize: "18px" }}>
+                              {" "}
+                              {e.name} {e.lastname}{" "}
+                            </p>
+                          </div>
+
+                          <div className="icon" title={e.phone}>
+                            <i className="lar la-circle"></i>
+                            <i className="lar la-comment"></i>
+                           <a href="tel:{e.phone}"> <i className="las la-phone button" onClick={toggle}
+                            ></i></a>
+                          </div>
+                        </div>
                       </div>
-                      <div className="icon">
-                        <i className="lar la-circle"></i>
-                        <i className="lar la-comment"></i>
-                        <i className="las la-phone"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="customer">
-                    <div className="user">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        width="60px"
-                        height="60px"
-                        alt=""
-                      />
-                      <div>
-                        <h5>Lewis Cunningham</h5>
-                      </div>
-                      <div className="icon">
-                        <i className="lar la-circle"></i>
-                        <i className="lar la-comment"></i>
-                        <i className="las la-phone"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="customer">
-                    <div className="user">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        width="60px"
-                        height="60px"
-                        alt=""
-                      />
-                      <div>
-                        <h5>Lewis Cunningham</h5>
-                      </div>
-                      <div className="icon">
-                        <i className="lar la-circle"></i>
-                        <i className="lar la-comment"></i>
-                        <i className="las la-phone"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="customer">
-                    <div className="user">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        width="60px"
-                        height="60px"
-                        alt=""
-                      />
-                      <div>
-                        <h5>Lewis Cunningham</h5>
-                      </div>
-                      <div className="icon">
-                        <i className="lar la-circle"></i>
-                        <i className="lar la-comment"></i>
-                        <i className="las la-phone"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="customer">
-                    <div className="user">
-                      <img
-                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-                        width="60px"
-                        height="60px"
-                        alt=""
-                      />
-                      <div>
-                        <h5>Lewis Cunningham</h5>
-                      </div>
-                      <div className="icon">
-                        <i className="lar la-circle"></i>
-                        <i className="lar la-comment"></i>
-                        <i className="las la-phone"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="customer">
-                    <div className="user">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" width="60px" height="60px" alt="" />
-                      <div>
-                        <h5>Lewis Cunningham</h5>
-                      </div>
-                      <div className="icon">
-                        <i className="lar la-circle"></i>
-                        <i className="lar la-comment"></i>
-                        <i className="las la-phone"></i>
-                      </div>
-                    </div>
-                  </div>
+                    ))}
                 </div>
               </div>
-          </Col>
+            </Col>
+            
           </Row>
         </Row>
       </Container>

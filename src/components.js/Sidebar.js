@@ -1,20 +1,28 @@
 import React from "react";
+  import { Button } from "reactstrap";
 
 const Sidebar = (props) => {
+  let { open, setOpen } = props;
+
+  let closeClick = () => {
+    setOpen(false);
+  };
 
   return (
     <div
       id="sidebar"
-      style={  { backgroundColor: "#DD2F6E", width: "345px" }}
+      style={{
+        backgroundColor: "#DD2F6E",
+        width: "345px",
+        display: open ? "block" : "none",
+      }}
     >
-
-        <i className="las la-times sidebar-close-btn" ></i>
+      <i className="las la-times sidebar-close-btn" onClick={closeClick}></i>
 
       <div className="sidebar-brand">
         <h4>
           <i className="lab la-accusoft"></i>Accusoft
         </h4>
-        
       </div>
       <div className="sidebar-menu">
         <ul>

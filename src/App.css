@@ -19,6 +19,9 @@ header {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
 }
+header h2{
+  color:#dd2f6e;
+}
 .search-wrapper {
   border: 1px solid #f0f0f0;
   border-radius: 30px;
@@ -51,6 +54,10 @@ header {
   display: inline-block;
   color: var(--text-grey);
 }
+
+#sidebar{
+  height: 100vh;
+}
 .sidebar-brand {
   padding: 45px;
   margin-bottom: 20px;
@@ -61,14 +68,24 @@ header {
 }
 .sidebar-menu li {
   list-style-type: none;
-  margin: 45px 40px 40px 0;
+  margin: 55px 40px 40px 0;
   width: 100%;
 }
+.sidebar-menu li:hover{
 
+  width: 100%;
+}
+.sidebar-menu a:hover {
+color:#dd2f6e;
+background-color: #fff;
+border-radius: 30px 0 0 30px;
+padding: 15px;
+}
 .sidebar-menu a {
   text-decoration: none;
   color: white;
 }
+
 .sidebar-menu a.active {
   color: #dd2f6e;
 }
@@ -104,8 +121,6 @@ main {
   color: #dd2f6e;
   font-size: 50px;
 }
-.card-single {
-}
 
 .label-navbar {
   display: none;
@@ -124,15 +139,7 @@ main {
   cursor: pointer;
 }
 
-#sidebar {
-  position: relative;
-  background-color: #dd2f6e;
-  width: 345px;
-  height: 100vh;
-}
 
-@media only screen and (max-width: 768px) {
-}
 
 @media only screen and (max-width: 992px) {
 
@@ -150,13 +157,15 @@ main {
   .search-wrapper {
     display: none;
   }
-
   #sidebar {
     display: none;
     position: absolute !important;
     z-index: 99999 !important;
   }
-
+ 
+.names{
+  display: none;
+}
   .label-navbar {
     display: block;
   }
@@ -171,6 +180,8 @@ main {
   padding: 1rem;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   width: 100%;
+  height: 630px;
+  overflow: auto;
 }
 
 .carddd {
@@ -178,7 +189,8 @@ main {
   margin-top: 40px;
   background-color: #fff;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-
+overflow: auto;
+height: 630px;
 }
 .card-top {
   padding: 1rem;
@@ -242,6 +254,15 @@ td .status {
   align-items: center;
   margin-bottom: 15px;
 }
+.user .name{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user .name img{
+  margin-right: 15px;
+}
+
 .user h5 {
   font-size: 15px;
 }
@@ -252,8 +273,25 @@ td .status {
 }
 .user .icon {
   color: #dd2f6e;
+  cursor: pointer;
 }
-
+.icon a{
+  text-decoration: none;
+  color: #dd2f6e;
+}
+.icon i:hover{
+  background-color: #dd2f6e;
+  color: #fff;
+  border-radius: 3px;
+  padding: 2px;
+}
 .card-body{
   overflow: auto;
+}
+
+@media only screen and (min-width: 992px) {
+  #sidebar {
+    display: block !important;
+ 
+  }
 }
