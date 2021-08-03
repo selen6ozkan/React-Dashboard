@@ -68,37 +68,36 @@ header h2{
 }
 .sidebar-menu li {
   list-style-type: none;
-  margin: 55px 40px 40px 0;
+  margin: 50px 40px 40px 0;
   width: 100%;
+  padding: 15px;
 }
-.sidebar-menu li:hover{
 
-  width: 100%;
-}
-.sidebar-menu a:hover {
-color:#dd2f6e;
-background-color: #fff;
-border-radius: 30px 0 0 30px;
-padding: 15px;
-}
+
+
 .sidebar-menu a {
   text-decoration: none;
   color: white;
 }
+.sidebar-menu a:hover{
+  text-decoration: none;
+  color: #810c37;
+}
 
-.sidebar-menu a.active {
-  color: #dd2f6e;
+.a-active {
+  color: #dd2f6e !important;
 }
 .sidebar-menu i {
   margin-right: 10px;
 }
-.sidebar-menu li.active {
+.li-active {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: white;
   border-radius: 30px 0 0 30px;
   width: 100%;
   padding-left: 10px;
+  
 }
 main {
   display: flex;
@@ -294,4 +293,33 @@ td .status {
     display: block !important;
  
   }
+}
+.customers{
+margin-top: 150px;
+  text-align: center;
+
+}
+.accounts{
+  margin-top: 150px;
+  text-align: center;
+
+}
+.inventory{
+  margin-top: 150px;
+  text-align: center;
+  
+}
+.tasks{
+  margin-top: 150px;
+  text-align: center;
+
+}
+.orders{
+  margin-top: 150px;
+  text-align: center;
+ 
+}
+.project{
+  margin-top: 150px;
+  text-align: center;
 }

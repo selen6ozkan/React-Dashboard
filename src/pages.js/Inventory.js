@@ -2,7 +2,7 @@ import React from 'react'
 
 const Inventory = () => {
     return (
-        <div>
+        <div className="inventory">
             INVENTORY
         </div>
     )

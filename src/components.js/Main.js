@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { useState } from "react";
 import customer from "../customer.json";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 const Main = (props) => {
   const { className } = props;
   const [modal, setModal] = useState(false);

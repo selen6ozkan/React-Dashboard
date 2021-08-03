@@ -1,9 +1,10 @@
 import React from 'react'
+import { Container, Row, Col } from "reactstrap";
 
 const Customers = () => {
     return (
-        <div>
-            CUSTOMERS
+        <div className="customers">
+       CUSTOMERS
         </div>
     )
 }
