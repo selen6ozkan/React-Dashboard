@@ -1,5 +1,4 @@
-import React from 'react'
-import { Container, Row, Col } from "reactstrap";
+import React from 'react';
 
 const Customers = () => {
     return (

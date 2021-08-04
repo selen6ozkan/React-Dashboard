@@ -1,5 +1,7 @@
-import React, {useState} from "react";
-import { Button } from "reactstrap";
+import React, {useState,useEffect} from "react";
+import {
+  Link
+} from "react-router-dom";
 import {
   useLocation
 } from "react-router-dom";
@@ -14,11 +16,10 @@ const Sidebar = (props) => {
   let location = useLocation();
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     setPath(location.pathname)
+    setOpen(false)
   }, [location]);
-
-
 
   return (
     <div
@@ -39,39 +40,39 @@ const Sidebar = (props) => {
       <div className="sidebar-menu">
         <ul>
           <li className={path === "/" ? "li-active" : " "}>
-            <a href="/"  className={path === "/" ? "a-active" : " "}>
+            <Link to="/"  className={path === "/" ? "a-active" : " "}>
               <i className="las la-igloo"></i>Dashboard
-            </a>
+            </Link>
           </li>
           <li  className={path === "/customers" ? "li-active" : " "}>
-            <a href="/customers" className={path === "/customers" ? "a-active" : " "}>
+            <Link to="/customers" className={path === "/customers" ? "a-active" : " "}>
               <i className="las la-users"></i>Customers
-            </a>
+            </Link>
           </li>
           <li  className={path === "/projects" ? "li-active" : " "}>
-            <a href="/projects" className={path === "/projects" ? "a-active" : " "}>
+            <Link to="/projects" className={path === "/projects" ? "a-active" : " "}>
               <i className="las la-clipboard-list"></i>Projects
-            </a>
+            </Link>
           </li>
           <li className={path === "/orders" ? "li-active" : " "}>
-            <a href="/orders"className={path === "/orders" ? "a-active" : " "} >
+            <Link to="/orders"className={path === "/orders" ? "a-active" : " "} >
               <i className="las la-shopping-bag"></i>Orders
-            </a>
+            </Link>
           </li>
           <li className={path === "/inventory" ? "li-active" : " "}>
-            <a href="/inventory" className={path === "/inventory" ? "a-active" : " "}  >
+            <Link to="/inventory" className={path === "/inventory" ? "a-active" : " "}  >
               <i className="las la-receipt"></i>Inventory
-            </a>
+            </Link>
           </li>
           <li className={path === "/account" ? "li-active" : " "}>
-            <a href="/account" className={path === "/account" ? "a-active" : " "} >
+            <Link to="/account" className={path === "/account" ? "a-active" : " "} >
               <i className="las la-user-circle"></i>Accounts
-            </a>
+            </Link>
           </li>
           <li  className={path === "/tasks" ? "li-active" : " "}>
-            <a href="/tasks"  className={path === "/tasks" ? "a-active" : " "}>
+            <Link to="/tasks"  className={path === "/tasks" ? "a-active" : " "}>
               <i className="las la-clipboard-list"></i>Tasks
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

@@ -3,7 +3,7 @@ import Sidebar from "./components.js/Sidebar";
 import Navbar from "./components.js/Navbar";
 import Main from "./components.js/Main";
 
-import { useState } from "react";
+import { useState} from "react";
 import {BrowserRouter as Router,Switch,Route }  from 'react-router-dom';
 import Accounts from "./pages.js/Accounts";
 import Customers from "./pages.js/Customers";
@@ -13,8 +13,7 @@ import Inventory from "./pages.js/Inventory";
 import Tasks from "./pages.js/Tasks";
 
 function App() {
-  let [open, setOpen] = useState();
-
+  let [open, setOpen] = useState();;
 
   return (
     <Router>

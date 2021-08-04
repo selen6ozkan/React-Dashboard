@@ -1,13 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import { useState } from "react";
 import customer from "../customer.json";
+import { Link } from "react-router-dom";
+
 const Main = (props) => {
-  const { className } = props;
-  const [modal, setModal] = useState(false);
-
-  const toggle = () => setModal(!modal);
-
   return (
     <main>
       <Container>
@@ -25,6 +21,7 @@ const Main = (props) => {
               </div>
             </div>
           </Col>
+
           <Col className="card-single" lg="3" md="6" sm="12">
             <div>
               <div className="inner">
@@ -164,11 +161,25 @@ const Main = (props) => {
                             </p>
                           </div>
 
-                          <div className="icon"  >
-                            <i className="lar la-circle"></i>
-                            <a href="mailto:{e.email}"><i className="lar la-comment" title={e.email}></i></a>
-                           <a href="tel:{e.phone}"> <i className="las la-phone button"  title={e.phone}onClick={toggle}
-                            ></i></a>
+                          <div className="icon">
+                            <Link to="">
+                              <i className="lar la-circle"></i>
+                            </Link>
+                            <Link to="">
+                              <i className="lar la-comment" title={e.email}></i>
+                            </Link>
+
+                            {e.phone ? (
+                              <Link to="">
+                                {" "}
+                                <i
+                                  className="las la-phone button"
+                                  title={e.phone}
+                                ></i>
+                              </Link>
+                            ) : (
+                              "  "
+                            )}
                           </div>
                         </div>
                       </div>
@@ -176,7 +187,6 @@ const Main = (props) => {
                 </div>
               </div>
             </Col>
-            
           </Row>
         </Row>
       </Container>
