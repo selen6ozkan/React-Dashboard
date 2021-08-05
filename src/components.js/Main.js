@@ -150,8 +150,8 @@ const Main = (props) => {
                 <div className="card-body">
                   {customer &&
                     customer.result.length > 0 &&
-                    customer.result.map((e) => (
-                      <div className="customer">
+                    customer.result.map((e,key) => (
+                      <div className="customer" key={key}>
                         <div className="user">
                           <div className="name">
                             <img src={e.avatar.url} alt="" />
